@@ -42,12 +42,23 @@ const siteContent = {
 // logo.setAttribute('src', siteContent["nav"]["img-src"])
 
 ///////////////////       HEADER         ///////
+const nav = document.querySelector('header nav');
 const navLinks = document.querySelectorAll('header nav a');
 const siteNavItems = Object.values(siteContent["nav"]);
 const logoImg = document.querySelector('#logo-img');
 logoImg.src = siteNavItems[siteNavItems.length - 1];
 
-navLinks.forEach((el, index) =>  el.textContent = siteNavItems[index]);
+navLinks.forEach((el, index) =>  {
+  el.textContent = siteNavItems[index];
+  el.style.color = "green";
+});
+
+const navItem = document.createElement('a');
+const firstNavItem = document.createElement('a');
+firstNavItem.textContent = "First!"
+navItem.textContent = "Hey I'm new here";
+nav.appendChild(navItem);
+nav.prepend(firstNavItem);
 
 ////////////////////         SECTION         //////
 const ctaIntro = document.querySelector('.cta-text h1');
