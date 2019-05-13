@@ -41,6 +41,7 @@ const siteContent = {
 // let logo = document.getElementById("logo-img");
 // logo.setAttribute('src', siteContent["nav"]["img-src"])
 
+const body = document.querySelector('body');
 ///////////////////       HEADER         ///////
 const nav = document.querySelector('header nav');
 const navLinks = document.querySelectorAll('header nav a');
@@ -61,12 +62,48 @@ nav.appendChild(navItem);
 nav.prepend(firstNavItem);
 
 ////////////////////         SECTION         //////
+const cta = document.querySelector('.cta');
+cta.style.justifyContent = "center";
 const ctaIntro = document.querySelector('.cta-text h1');
 ctaIntro.innerHTML = "DOM <br> Is <br> Awesome";
 const ctaBtn = document.querySelector('.cta button');
 ctaBtn.textContent = "Get Started";
 const codeSnippet = document.querySelector('#cta-img');
 codeSnippet.src = siteContent.cta["img-src"];
+
+const ctaLeft = document.querySelector('.cta .cta-text');
+const newButton = document.createElement('button');
+newButton.textContent = "Turn off the lights";
+ctaLeft.appendChild(newButton);
+
+const darkMode = () => {
+  body.style.background = "#111";
+  body.style.color = "#ddd";
+  section.style.borderColor = "#ddd";
+  header.style.background = "linear-gradient(to right, rgba(255,0,0,0), blue"
+  header.style.borderRadius = "5px";
+  header.style.padding = "10px 20px";
+  newButton.textContent = "Lights on";
+}
+const lightMode = () => {
+  body.style.background = "#fff";
+  body.style.color = "#000";
+  section.style.borderColor = "#000";
+  header.style.background = "none"
+  header.style.borderRadius = "5px";
+  header.style.padding = 0;
+  newButton.textContent = "Turn off the lights";
+}
+const section = document.querySelector('.main-content');
+const header = document.querySelector('header');
+newButton.addEventListener('click', () => {
+  if(newButton.textContent === "Lights on"){
+    lightMode();
+  } else {
+    darkMode();
+  }
+});
+
 
 //////////////////////      Main Content //////////
 const mainTopText = document.querySelectorAll('.top-content .text-content h4');
