@@ -69,7 +69,7 @@ const middleImg = document.querySelector('.middle-img');
 middleImg.src = siteContent["main-content"]["middle-img-src"];
 
 const bottomTextTop = document.querySelectorAll('.bottom-content .text-content h4');
-const paraBottomText = document.querySelectorAll('.bottom-content .textcontent p');
+const paraBottomText = document.querySelectorAll('.bottom-content .text-content p');
 bottomTextTop[0].textContent = siteContent["main-content"]["services-h4"];
 bottomTextTop[1].textContent = siteContent["main-content"]["product-h4"];
 bottomTextTop[2].textContent = siteContent["main-content"]["vision-h4"];
@@ -77,3 +77,16 @@ bottomTextTop[2].textContent = siteContent["main-content"]["vision-h4"];
 paraBottomText[0].textContent = siteContent["main-content"]["services-content"];
 paraBottomText[1].textContent = siteContent["main-content"]["product-content"];
 paraBottomText[2].textContent = siteContent["main-content"]["vision-content"];
+
+//////////////////////           CONTACT     ///////////////
+const contactHead = document.querySelector('.contact h4');
+contactHead.textContent = siteContent.contact["contact-h4"];
+const contactInfo = document.querySelectorAll('.contact p');
+
+contactInfo[0].textContent = siteContent.contact.address;
+contactInfo[1].textContent = siteContent.contact.phone;
+contactInfo[2].textContent = siteContent.contact.email;
+
+////////////////////////        FOOTER       ///////////////
+const footerPara = document.querySelector('footer p');
+footerPara.textContent = siteContent.footer.copyright;
