@@ -38,5 +38,42 @@ const siteContent = {
 };
 
 // Example: Update the img src for the logo
-let logo = document.getElementById("logo-img");
-logo.setAttribute('src', siteContent["nav"]["img-src"])
+// let logo = document.getElementById("logo-img");
+// logo.setAttribute('src', siteContent["nav"]["img-src"])
+
+///////////////////       HEADER         ///////
+const navLinks = document.querySelectorAll('header nav a');
+const siteNavItems = Object.values(siteContent["nav"]);
+const logoImg = document.querySelector('#logo-img');
+logoImg.src = siteNavItems[siteNavItems.length - 1];
+
+navLinks.forEach((el, index) =>  el.textContent = siteNavItems[index]);
+
+////////////////////         SECTION         //////
+const ctaIntro = document.querySelector('.cta-text h1');
+ctaIntro.innerHTML = "DOM <br> Is <br> Awesome";
+const ctaBtn = document.querySelector('.cta button');
+ctaBtn.textContent = "Get Started";
+const codeSnippet = document.querySelector('#cta-img');
+codeSnippet.src = siteContent.cta["img-src"];
+
+//////////////////////      Main Content //////////
+const mainTopText = document.querySelectorAll('.top-content .text-content h4');
+const paraTopText = document.querySelectorAll('.top-content .text-content p');
+mainTopText[0].textContent = siteContent["main-content"]["features-h4"];
+mainTopText[1].textContent = siteContent["main-content"]["about-h4"];
+paraTopText[0].textContent = siteContent["main-content"]["features-content"];
+paraTopText[1].textContent = siteContent["main-content"]["about-content"];
+
+const middleImg = document.querySelector('.middle-img');
+middleImg.src = siteContent["main-content"]["middle-img-src"];
+
+const bottomTextTop = document.querySelectorAll('.bottom-content .text-content h4');
+const paraBottomText = document.querySelectorAll('.bottom-content .textcontent p');
+bottomTextTop[0].textContent = siteContent["main-content"]["services-h4"];
+bottomTextTop[1].textContent = siteContent["main-content"]["product-h4"];
+bottomTextTop[2].textContent = siteContent["main-content"]["vision-h4"];
+
+paraBottomText[0].textContent = siteContent["main-content"]["services-content"];
+paraBottomText[1].textContent = siteContent["main-content"]["product-content"];
+paraBottomText[2].textContent = siteContent["main-content"]["vision-content"];
